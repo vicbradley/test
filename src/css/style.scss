@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+$darkAccent: #224b4b;
+$lightAccent: #2cda9d;
+$backgroundBase: #619e9e;
+
+$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
+$default-border: 1px solid darken($backgroundBase, 35%);
+
+.colorScheme {
+    background-color: lighten($backgroundBase, 30%);
+    border: $default-border;
+    box-shadow: $shadow;
+    border-top: none;
+}
+
+.toolbar {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lighten($darkAccent, 25%);
+    padding: 0.3rem;
+    border: $default-border;
+    box-shadow: $shadow;
+    font-family: Russo One;
+    font-size: 1.3rem;
+    color: black;
+    p {
+        font-family: 'Russo One', sans-serif;
+        margin: auto 0;
+        margin-left: 10px;
+    }
+    i {
+        margin-right: 10px;
+    }
+}
+
+#toolbarEditor {
+    @extend .toolbar;
+    max-width: 600px;
+}
+
+#toolbarPreview {
+    @extend .toolbar;
+    max-width: 800px;
+}
+
+.editorWrap {
+    max-width: 600px;
+    margin: 30px auto;
+
+    textarea {
+        @extend .colorScheme;
+        width: 100%;
+        min-height: 200px;
+        padding-left: 5px;
+        padding-top: 5px;
+        font-size: 0.875rem;
+    }
+}
+
+.previewWrap {
+    @extend .colorScheme;
+    max-width: 800px;
+    margin: 1.25rem auto;
+    min-height: 200px;
+    overflow-wrap: break-word;
+    border: 2px solid black;
+    #preview {
+        margin: 1.3em 1.3em;
+        line-height: 2.5;
+    }
+}
+
+.maximized {
+    width: 96%;
+    min-height: 100vh;
+    margin: auto;
+    textarea {
+        min-height: 95vh;
+        resize: none;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+// Markdown Styling
+blockquote {
+    border-left: 3px solid #224b4b;
+    color: #224b4b;
+    padding-left: 5px;
+    margin-left: 25px;
+}
+
+> p > code {
+    padding: 3px;
+}
+
+code {
+    background: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+pre {
+    display: block;
+    overflow: auto;
+    background: white;
+    padding: 5px;
+    line-height: 1.2;
+}
+
+h1 {
+    border-bottom: 2px solid $darkAccent;
+}
+
+h2 {
+    border-bottom: 1px solid $darkAccent;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 2px solid $darkAccent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+img {
+    display: block;
+    max-width: 90%;
+    margin: 2rem auto;
+}
